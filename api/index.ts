@@ -98,5 +98,10 @@ module.exports = async (request: VercelRequest, response: VercelResponse) => {
       console.error("Unknown Type");
       response.status(400).send({ error: "Unknown Type" });
     }
-  }
+  } else {
+		// Respond to all other requests with a 404
+		response.status(404).end();
+		console.log("404");
+	}
+	}
 };
