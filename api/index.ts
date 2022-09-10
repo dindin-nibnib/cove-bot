@@ -151,11 +151,15 @@ module.exports = async (request: VercelRequest, response: VercelResponse) => {
       Authorization: "Bot " + process.env.BOT_TOKEN,
     };
 
-    fetch(url, {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(INVITE_COMMAND),
-    });
+    try {
+      await fetch(url, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(INVITE_COMMAND),
+      });
+    } catch (e) {
+      console.error(e);
+    }
 
     // Respond to all other requests with a 404
     response.status(404).end();
