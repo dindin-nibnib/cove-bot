@@ -33,6 +33,7 @@ module.exports = async (request: VercelRequest, response: VercelResponse) => {
       | Uint8Array
       | ArrayBuffer;
     const rawBody = await getRawBody(request);
+    console.log("gotRawBody");
 
     if (!process.env.PUBLIC_KEY)
       return response
