@@ -18,6 +18,8 @@
   "homepage": "https://github.com/dindin-nibnib/cove-bot#readme",
   "dependencies": {
     "@vercel/node": "^2.5.14",
-    "dotenv": "^16.0.2"
+    "discord-interactions": "^3.2.0",
+    "dotenv": "^16.0.2",
+    "raw-body": "^2.5.1"
   }
 }
