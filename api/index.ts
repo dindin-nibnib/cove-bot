@@ -16,6 +16,40 @@ const HI_COMMAND = {
   description: "Say hello!",
 };
 
+const BLEP_COMMAND = {
+  name: "blep",
+  type: 1,
+  description: "Send a random adorable animal photo",
+  options: [
+    {
+      name: "animal",
+      description: "The type of animal",
+      type: 3,
+      required: true,
+      choices: [
+        {
+          name: "Dog",
+          value: "animal_dog",
+        },
+        {
+          name: "Cat",
+          value: "animal_cat",
+        },
+        {
+          name: "Penguin",
+          value: "animal_penguin",
+        },
+      ],
+    },
+    {
+      name: "only_smol",
+      description: "Whether to show only baby animals",
+      type: 5,
+      required: false,
+    },
+  ],
+};
+
 const INVITE_URL = `https://discord.com/oauth2/authorize?client_id=${process.env.APPLICATION_ID}&scope=applications.commands`;
 
 module.exports = async (request: VercelRequest, response: VercelResponse) => {
@@ -89,6 +123,17 @@ module.exports = async (request: VercelRequest, response: VercelResponse) => {
           });
           console.log("Invite request");
           break;
+
+        case BLEP_COMMAND.name.toLowerCase():
+          response.status(200).send({
+            type: 4,
+            data: {
+              content: "Blep!",
+            },
+          });
+          console.log("Blep request");
+          break;
+
         default:
           console.error("Unknown Command");
           response.status(400).send({ error: "Unknown Type" });
@@ -99,6 +144,19 @@ module.exports = async (request: VercelRequest, response: VercelResponse) => {
       response.status(400).send({ error: "Unknown Type" });
     }
   } else {
+    let url = `https://discord.com/api/v10/applications/${process.env.APPLICATION_ID}/commands`;
+
+    // For authorization, you can use either your bot token
+    let headers = {
+      Authorization: "Bot " + process.env.BOT_TOKEN,
+    };
+
+    fetch(url, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(INVITE_COMMAND),
+    });
+
     // Respond to all other requests with a 404
     response.status(404).end();
     console.log("404");
