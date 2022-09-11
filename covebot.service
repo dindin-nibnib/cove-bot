@@ -1,0 +1,13 @@
+[Unit]
+Description=nodejs service for the cove bot
+
+[Service]
+ExecStart=/root/cove-bot/src/index.ts
+Restart=always
+Group=nogroup
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/root/cove-bot
+
+[Install]
+WantedBy=multi-user.target

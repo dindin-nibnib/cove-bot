@@ -1,3 +1,4 @@
+#!/root/.nvm/versions/node/v16.17.0/bin/ts-node
 /* It's importing the required modules. */
 import fs = require("fs");
 import path = require("path");
@@ -63,7 +64,7 @@ for (const file of commandFiles) {
 /* It's a listener that will be called when the client is ready. */
 client.once("ready", async () => {
   console.log("Ready!");
-  client.user?.setActivity("flying dragons!", { type: "WATCHING" });
+  client.user?.setActivity("to analyze the intelligence profile of the Grineer. Error, not a number! Did the Operator enjoy this witticism?", { type: "PLAYING" });
 });
 
 client.on("interactionCreate", async (interaction) => {
