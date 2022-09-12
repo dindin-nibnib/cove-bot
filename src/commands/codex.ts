@@ -23,8 +23,8 @@ module.exports = {
 			embeds: [
 				new Discord.MessageEmbed()
 					.setTitle("Codex entry")
-					.setDescription("Ordis chose the " + entry.name + " for you.")
-					.setImage(entry.image)
+					.setDescription("Ordis chose the " + entry.name + " for you. It's a " + entry.faction + "!")
+					.setImage(entry.image + ".png")
 			]
 		});
 	},
