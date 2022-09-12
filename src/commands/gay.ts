@@ -19,9 +19,9 @@ module.exports = {
 	) {
 		let rating = 0;
 		if (interaction.user.id === "592865976501141569")
-			rating = randInt(98, 100);
+			rating = randInt(98, 101);
 		else if (interaction.user.id === "373515998000840714")
-			rating = randInt(95, 100);
+			rating = randInt(95, 101);
 		else
 			rating = randInt();
 
