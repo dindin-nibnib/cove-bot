@@ -2,6 +2,7 @@ import { SlashCommandBuilder } from "@discordjs/builders";
 import Discord = require("discord.js");
 import Discordx = require("discordx");
 import { codex } from "../data.json";
+import { randInt } from "../lib/utilities";
 
 // Redeclares Client in order to add a collection of commands
 class Client extends Discordx.Client {
@@ -17,6 +18,14 @@ module.exports = {
 		interaction: Discord.CommandInteraction<Discord.CacheType>,
 		client: Client
 	) {
-
+		const entry = codex[randInt(0, codex.length)];
+		interaction.reply({
+			embeds: [
+				new Discord.MessageEmbed()
+					.setTitle("Codex entry")
+					.setDescription("Ordis chose the " + entry.name + " for you.")
+					.setImage(entry.image)
+			]
+		});
 	},
 };

@@ -12,9 +12,54 @@
 	],
 	"codex": [
 		{
-			"name": "",
-			"image": "",
-			"description": ""
+			"name": "Lancer",
+			"image": "https://imgur.com/1e2MpLr",
+			"faction": "Grineer"
+		},
+		{
+			"name": "Butcher",
+			"image": "https://imgur.com/sSdBNtM",
+			"faction": "Grineer"
+		},
+		{
+			"name": "Crewman",
+			"image": "https://imgur.com/1QVwp5x",
+			"faction": "Corpus"
+		},
+		{
+			"name": "MOA",
+			"image": "https://imgur.com/QhYird7",
+			"faction": "Corpus"
+		},
+		{
+			"name": "Charger",
+			"image": "https://imgur.com/LEFotuE",
+			"faction": "Infested"
+		},
+		{
+			"name": "Ancient Healer",
+			"image": "https://imgur.com/GCApC39",
+			"faction": "Infested"
+		},
+		{
+			"name": "Corrupted MOA",
+			"image": "https://imgur.com/uuXCTxA",
+			"faction": "Corrupted"
+		},
+		{
+			"name": "Orokin Drone",
+			"image": "https://imgur.com/n00FVWY",
+			"faction": "Corrupted"
+		},
+		{
+			"name": "Battalyst",
+			"image": "https://imgur.com/0W0Zzzp",
+			"faction": "Sentient"
+		},
+		{
+			"name": "Conculyst",
+			"image": "https://imgur.com/rHuvStD",
+			"faction": "Sentient"
 		}
 	]
 }
