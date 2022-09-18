@@ -18,7 +18,7 @@ module.exports = {
 		interaction: Discord.CommandInteraction<Discord.CacheType>,
 		client: Client
 	) {
-		const entry = codex[randInt(0, codex.length)];
+		const entry = codex[randInt(0, codex.length - 1)];
 		interaction.reply({
 			embeds: [
 				new Discord.MessageEmbed()
